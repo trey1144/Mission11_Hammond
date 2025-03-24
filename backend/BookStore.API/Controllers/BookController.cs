@@ -39,5 +39,16 @@ namespace BookProject.API.Controllers
 
             return Ok(someObject);
         }
+
+        [HttpGet("GetBookCategories")]
+        public IActionResult GetBookCategories() 
+        {
+            // LINQ query to get book categories
+            var categories = _bookContext.Books
+                .Select(b => b.Category)
+                .Distinct()
+                .ToList();
+            return Ok(categories);
+        }
     }
 }

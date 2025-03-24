@@ -36,8 +36,6 @@ function BookList() {
   // return the list of books with pagination buttons at the bottom
   return (
     <>
-      <h1>All Books</h1>
-      <br />
       {sortedBooks.map((b) => (
         <div
           id="bookCard"
