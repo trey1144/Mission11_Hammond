@@ -19,16 +19,23 @@ namespace BookProject.API.Controllers
 
         // GetBooks method
         [HttpGet("AllBooks")]
-        public IActionResult GetBooks(int pageSize = 5, int pageNum = 1)
+        public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, [FromQuery] List<string>? bookCategories = null)
         {
+            var query = _bookContext.Books.AsQueryable();
+
+            if (bookCategories != null && bookCategories.Any())
+            {
+                query = query.Where(b => bookCategories.Contains(b.Category));
+            }
+
             // LINQ query to get books
-            var books =  _bookContext.Books
+            var books =  query
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
 
             // count of books
-            var count = _bookContext.Books.Count();
+            var count = query.Count();
 
             // anonymous object to return both books and count
             var someObject = new
