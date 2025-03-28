@@ -1,7 +1,9 @@
 // Code for the BookList component
 // imports
 import { useEffect, useState } from 'react';
-import { Book } from './types/Book';
+import { Book } from '../types/Book';
+import { useNavigate } from 'react-router-dom';
+import './BookList.css';
 
 function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   // state variables
@@ -11,6 +13,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [totalItems, setTotalItems] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | null>(null);
+  const navigate = useNavigate();
 
   // sort books by title
   const sortedBooks = [...books].sort((a, b) => {
@@ -72,6 +75,12 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
                 <strong>Price:</strong> ${b.price}
               </li>
             </ul>
+            <button
+              className="btn btn-success"
+              onClick={() => navigate(`/buy/${b.title}/${b.bookID}/${b.price}`)}
+            >
+              Buy
+            </button>
           </div>
         </div>
       ))}
