@@ -2,6 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { CartItem } from '../types/CartItem';
 
+// lists out all books added to the cart
+// allows user to remove books from their cart with the remove button
+// also lists out the total at the bottom
 function CartPage() {
   const navigate = useNavigate();
   const { cart, removeFromCart } = useCart();

@@ -1,3 +1,4 @@
+// simple welcome component that shows the title
 function Welcome() {
   return (
     <>

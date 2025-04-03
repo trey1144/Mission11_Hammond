@@ -3,6 +3,8 @@ import Welcome from '../components/Welcome';
 import { CartItem } from '../types/CartItem';
 import { useCart } from '../context/CartContext';
 
+// page that displays the book and if the add to cart button is pressed
+// then adds to the cart using the addToCart function from the context file
 function BuyPage() {
   const navigate = useNavigate();
   const { title, bookID, price } = useParams();

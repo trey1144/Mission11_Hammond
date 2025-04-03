@@ -5,6 +5,8 @@ import BookList from '../components/BookList';
 import CartSummary from '../components/CartSummary';
 import DarkMode from '../components/DarkMode';
 
+// main page of the website
+// comprised of many components with some bootstrap grid styling
 function BookPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   return (

@@ -4,8 +4,10 @@ import BookPage from './pages/BookPage';
 import BuyPage from './pages/BuyPage';
 import { CartProvider } from './context/CartContext';
 import CartPage from './pages/CartPage';
+import AdminBooksPage from './pages/AdminBooksPage';
 
-// App component that renders the BookList component
+// App component that has all the routes
+// with the cart provider around everything so that each page can access and use functions from the context page
 function App() {
   return (
     <>
@@ -16,6 +18,7 @@ function App() {
             <Route path="/books" element={<BookPage />} />
             <Route path="/buy/:title/:bookID/:price" element={<BuyPage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/adminbooks" element={<AdminBooksPage />} />
           </Routes>
         </Router>
       </CartProvider>

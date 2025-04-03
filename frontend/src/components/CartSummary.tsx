@@ -1,6 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
+// cart summary component that gives a dynamic cart total as things are added
+// when the element is clicked it navigates to the cartpage
+// also has styling along with it
 const CartSummary = () => {
   const navigate = useNavigate();
   const { cart } = useCart();

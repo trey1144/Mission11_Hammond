@@ -1,3 +1,4 @@
+// simple dark mode button that switches some of the styling to a dark mode
 function DarkMode() {
   return (
     <>

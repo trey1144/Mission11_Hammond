@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './CategoryFilter.css';
 
+// component that grabs the categories from the database and then when a category is chosen it is passed to the book list
 function CategoryFilter({
   selectedCategories,
   setSelectedCategories,
@@ -10,6 +11,7 @@ function CategoryFilter({
 }) {
   const [categories, setCategories] = useState<string[]>([]);
 
+  // grab all of the categories from the database
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -26,12 +28,14 @@ function CategoryFilter({
     fetchCategories();
   }, []);
 
+  // sets the selected categories to the updated one when a checkbox is pressed
   function handleCheckboxChange({ target }: { target: HTMLInputElement }) {
     const updatedCategories = selectedCategories.includes(target.value)
       ? selectedCategories.filter((x) => x !== target.value)
       : [...selectedCategories, target.value];
     setSelectedCategories(updatedCategories);
   }
+
   return (
     <>
       <div className="category-filter">
