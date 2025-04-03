@@ -17,7 +17,17 @@ builder.Services.AddDbContext<BookDbContext>(options =>
 });
 
 // Add CORS
-builder.Services.AddCors();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000", "https://ambitious-beach-055bbc91e.6.azurestaticapps.net")
+                .AllowCredentials()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
 
 var app = builder.Build();
 
@@ -29,7 +39,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // let Cors know where the request is coming from
-app.UseCors(x => x.WithOrigins("http://localhost:3000"));
+app.UseCors("AllowFrontend");
 
 app.UseHttpsRedirection();
 

@@ -1,3 +1,4 @@
+// book object, what is coming from the database
 export interface Book {
   bookID: number;
   title: string;

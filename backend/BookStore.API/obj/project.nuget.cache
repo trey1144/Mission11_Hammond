@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TrqAYew3Nz4=",
+  "dgSpecHash": "pqJvbG9Tbks=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Trey\\OneDrive - Brigham Young University\\Desktop\\Mission11_Hammond\\backend\\WaterProject.API\\BookProject.API.csproj",
+  "projectFilePath": "C:\\Users\\Trey\\OneDrive - Brigham Young University\\Desktop\\Mission11_Hammond\\backend\\BookStore.API\\BookProject.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Trey\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.13\\microsoft.data.sqlite.core.8.0.13.nupkg.sha512",
     "C:\\Users\\Trey\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.13\\microsoft.entityframeworkcore.8.0.13.nupkg.sha512",
