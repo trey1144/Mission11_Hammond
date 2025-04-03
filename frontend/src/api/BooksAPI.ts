@@ -8,7 +8,8 @@ interface FetchBooksResponse {
 }
 
 // variable containing the first part of our api url
-const API_URL = 'https://localhost:5000/Book';
+const API_URL =
+  'https://mission13-hammond-backend-gffrduhahwfke4gf.eastus-01.azurewebsites.net/Book';
 
 // function to get all the books
 export const fetchBooks = async (

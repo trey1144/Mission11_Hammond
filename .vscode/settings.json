@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/677120ce-ce31-429d-9d50-05046592d2fe/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/Mission13-Hammond-Backend",
+  "appService.deploySubpath": "backend\\BookStore.API\\publish"
+}
